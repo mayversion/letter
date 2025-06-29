@@ -1,0 +1,500 @@
+
+================================================================================
+TEST 1: Test 1: Cas de base - aucune sélection
+================================================================================
+
+📋 DONNÉES UTILISÉES:
+Nom: Marie Dupont
+Âge: 22
+Cible: Stage en marketing
+Genre: female
+Langue: fr
+Langues sélectionnées: Aucune
+Intérêts sélectionnés: Aucun
+Objectifs sélectionnés: Aucun
+Motivations sélectionnées: Aucune
+Réalisations sélectionnées: Aucune
+Expérience sélectionnée: Aucune
+Qualifications sélectionnées: Aucune
+
+📄 LETTRE GÉNÉRÉE:
+Marie Dupont
+22 years old
+June 29, 2025
+Dear Hiring Manager,
+As a passionate and motivated student, I am submitting my application for Stage en marketing.
+Although I do not yet have significant professional experience, my academic background and personal projects have allowed me to develop valuable skills.
+My skills and motivation constitute my main assets for this position.
+What particularly attracts me to this opportunity is the possibility of contributing to your company's development while continuing to learn and grow professionally.
+I would be delighted to meet with you for an interview to discuss my motivations in more detail and discover the specific challenges of the position. Thank you for the attention you will give to my application and I remain at your disposal.
+
+Sincerely,
+Marie Dupont
+
+
+================================================================================
+TEST 2: Test 2: Toutes les sélections en français (féminin)
+================================================================================
+
+📋 DONNÉES UTILISÉES:
+Nom: Sophie Martin
+Âge: 24
+Cible: Poste de développeuse
+Genre: female
+Langue: fr
+Langues sélectionnées: français, anglais, espagnol
+Intérêts sélectionnés: lecture, technologie, sport
+Objectifs sélectionnés: développement professionnel, innovation
+Motivations sélectionnées: défis intellectuels, travail d'équipe
+Réalisations sélectionnées: projet réussi, prix académique
+Expérience sélectionnée: stage, projet personnel
+Qualifications sélectionnées: diplôme, compétences techniques
+
+📄 LETTRE GÉNÉRÉE:
+Sophie Martin
+24 years old
+June 29, 2025
+Dear Hiring Manager,
+As a passionate and motivated student, I am submitting my application for Poste de développeuse. My proficiency in French, English, and Spanish constitutes an additional asset for this position. My interests, particularly reading, technology, and sports, demonstrate my intellectual curiosity and adaptability.
+My experience includes an internship and a personal project, which has allowed me to develop practical skills and a deep understanding of the field.
+My main qualifications include my degree and my technical skills. I am particularly proud of successfully completing a complex project and receiving an academic award, which demonstrate my ability to carry projects to completion and achieve concrete results. My main goal is to pursue my professional development and innovation in a stimulating environment.
+What particularly attracts me to this opportunity is intellectual challenges and teamwork. I am convinced that your work environment would perfectly match my professional aspirations and allow me to flourish fully.
+I would be delighted to meet with you for an interview to discuss my motivations in more detail and discover the specific challenges of the position. Thank you for the attention you will give to my application and I remain at your disposal.
+
+Sincerely,
+Sophie Martin
+
+
+================================================================================
+TEST 3: Test 3: Toutes les sélections en français (masculin)
+================================================================================
+
+📋 DONNÉES UTILISÉES:
+Nom: Pierre Dubois
+Âge: 23
+Cible: Poste d'ingénieur
+Genre: male
+Langue: fr
+Langues sélectionnées: français, anglais, allemand
+Intérêts sélectionnés: musique, cinéma, cuisine
+Objectifs sélectionnés: apprentissage continu, leadership
+Motivations sélectionnées: innovation, impact social
+Réalisations sélectionnées: leadership, collaboration
+Expérience sélectionnée: travail étudiant, bénévolat
+Qualifications sélectionnées: certification, soft skills
+
+📄 LETTRE GÉNÉRÉE:
+Pierre Dubois
+23 years old
+June 29, 2025
+Dear Hiring Manager,
+As a passionate and motivated student, I am submitting my application for Poste d'ingénieur. My proficiency in French, English, and German constitutes an additional asset for this position. My interests, particularly music, cinema, and cooking, demonstrate my intellectual curiosity and adaptability.
+My experience includes student work and volunteer work, which has allowed me to develop practical skills and a deep understanding of the field.
+My main qualifications include my certification and my soft skills. I am particularly proud of exercising leadership responsibilities and effective team collaboration, which demonstrate my ability to carry projects to completion and achieve concrete results. My main goal is to pursue continuous learning and developing my leadership skills in a stimulating environment.
+What particularly attracts me to this opportunity is innovation and having a positive social impact. I am convinced that your work environment would perfectly match my professional aspirations and allow me to flourish fully.
+I would be delighted to meet with you for an interview to discuss my motivations in more detail and discover the specific challenges of the position. Thank you for the attention you will give to my application and I remain at your disposal.
+
+Sincerely,
+Pierre Dubois
+
+
+================================================================================
+TEST 4: Test 4: Sélections partielles en français
+================================================================================
+
+📋 DONNÉES UTILISÉES:
+Nom: Emma Rousseau
+Âge: 21
+Cible: Stage en communication
+Genre: female
+Langue: fr
+Langues sélectionnées: français, anglais
+Intérêts sélectionnés: écriture, art
+Objectifs sélectionnés: Aucun
+Motivations sélectionnées: développement personnel
+Réalisations sélectionnées: Aucune
+Expérience sélectionnée: aucune expérience
+Qualifications sélectionnées: passion
+
+📄 LETTRE GÉNÉRÉE:
+Emma Rousseau
+21 years old
+June 29, 2025
+Dear Hiring Manager,
+As a passionate and motivated student, I am submitting my application for Stage en communication. My proficiency in French and English constitutes an additional asset for this position. My interests, particularly writing and art, demonstrate my intellectual curiosity and adaptability.
+My experience includes no professional experience, which has allowed me to develop practical skills and a deep understanding of the field.
+My main qualifications include my passion. 
+What particularly attracts me to this opportunity is personal development. I am convinced that your work environment would perfectly match my professional aspirations and allow me to flourish fully.
+I would be delighted to meet with you for an interview to discuss my motivations in more detail and discover the specific challenges of the position. Thank you for the attention you will give to my application and I remain at your disposal.
+
+Sincerely,
+Emma Rousseau
+
+
+================================================================================
+TEST 5: Test 5: Cas de base en anglais
+================================================================================
+
+📋 DONNÉES UTILISÉES:
+Nom: John Smith
+Âge: 25
+Cible: Software Engineer position
+Genre: male
+Langue: en
+Langues sélectionnées: Aucune
+Intérêts sélectionnés: Aucun
+Objectifs sélectionnés: Aucun
+Motivations sélectionnées: Aucune
+Réalisations sélectionnées: Aucune
+Expérience sélectionnée: Aucune
+Qualifications sélectionnées: Aucune
+
+📄 LETTRE GÉNÉRÉE:
+John Smith
+25 years old
+June 29, 2025
+Dear Hiring Manager,
+As a passionate and motivated student, I am submitting my application for Software Engineer position.
+Although I do not yet have significant professional experience, my academic background and personal projects have allowed me to develop valuable skills.
+My skills and motivation constitute my main assets for this position.
+What particularly attracts me to this opportunity is the possibility of contributing to your company's development while continuing to learn and grow professionally.
+I would be delighted to meet with you for an interview to discuss my motivations in more detail and discover the specific challenges of the position. Thank you for the attention you will give to my application and I remain at your disposal.
+
+Sincerely,
+John Smith
+
+
+================================================================================
+TEST 6: Test 6: Toutes les sélections en anglais
+================================================================================
+
+📋 DONNÉES UTILISÉES:
+Nom: Sarah Johnson
+Âge: 26
+Cible: Marketing Manager position
+Genre: female
+Langue: en
+Langues sélectionnées: English, French, Spanish
+Intérêts sélectionnés: reading, traveling, photography
+Objectifs sélectionnés: professional development, continuous learning
+Motivations sélectionnées: intellectual challenges, teamwork
+Réalisations sélectionnées: successful project, academic award
+Expérience sélectionnée: internship, personal project
+Qualifications sélectionnées: degree, technical skills
+
+📄 LETTRE GÉNÉRÉE:
+Sarah Johnson
+26 years old
+June 29, 2025
+Dear Hiring Manager,
+As a passionate and motivated student, I am submitting my application for Marketing Manager position.
+Although I do not yet have significant professional experience, my academic background and personal projects have allowed me to develop valuable skills.
+My skills and motivation constitute my main assets for this position.
+What particularly attracts me to this opportunity is . I am convinced that your work environment would perfectly match my professional aspirations and allow me to flourish fully.
+I would be delighted to meet with you for an interview to discuss my motivations in more detail and discover the specific challenges of the position. Thank you for the attention you will give to my application and I remain at your disposal.
+
+Sincerely,
+Sarah Johnson
+
+
+================================================================================
+TEST 7: Test 7: Test des accords de genre - féminin
+================================================================================
+
+📋 DONNÉES UTILISÉES:
+Nom: Claire Moreau
+Âge: 22
+Cible: Poste de consultante
+Genre: female
+Langue: fr
+Langues sélectionnées: français
+Intérêts sélectionnés: lecture
+Objectifs sélectionnés: développement professionnel
+Motivations sélectionnées: excellence
+Réalisations sélectionnées: projet réussi
+Expérience sélectionnée: stage
+Qualifications sélectionnées: diplôme
+
+📄 LETTRE GÉNÉRÉE:
+Claire Moreau
+22 years old
+June 29, 2025
+Dear Hiring Manager,
+As a passionate and motivated student, I am submitting my application for Poste de consultante. My proficiency in French constitutes an additional asset for this position. My interests, particularly reading, demonstrate my intellectual curiosity and adaptability.
+My experience includes an internship, which has allowed me to develop practical skills and a deep understanding of the field.
+My main qualifications include my degree. I am particularly proud of successfully completing a complex project, which demonstrate my ability to carry projects to completion and achieve concrete results. My main goal is to pursue my professional development in a stimulating environment.
+What particularly attracts me to this opportunity is excellence. I am convinced that your work environment would perfectly match my professional aspirations and allow me to flourish fully.
+I would be delighted to meet with you for an interview to discuss my motivations in more detail and discover the specific challenges of the position. Thank you for the attention you will give to my application and I remain at your disposal.
+
+Sincerely,
+Claire Moreau
+
+
+================================================================================
+TEST 8: Test 8: Test des accords de genre - masculin
+================================================================================
+
+📋 DONNÉES UTILISÉES:
+Nom: Thomas Bernard
+Âge: 24
+Cible: Poste de consultant
+Genre: male
+Langue: fr
+Langues sélectionnées: français
+Intérêts sélectionnés: lecture
+Objectifs sélectionnés: développement professionnel
+Motivations sélectionnées: excellence
+Réalisations sélectionnées: projet réussi
+Expérience sélectionnée: stage
+Qualifications sélectionnées: diplôme
+
+📄 LETTRE GÉNÉRÉE:
+Thomas Bernard
+24 years old
+June 29, 2025
+Dear Hiring Manager,
+As a passionate and motivated student, I am submitting my application for Poste de consultant. My proficiency in French constitutes an additional asset for this position. My interests, particularly reading, demonstrate my intellectual curiosity and adaptability.
+My experience includes an internship, which has allowed me to develop practical skills and a deep understanding of the field.
+My main qualifications include my degree. I am particularly proud of successfully completing a complex project, which demonstrate my ability to carry projects to completion and achieve concrete results. My main goal is to pursue my professional development in a stimulating environment.
+What particularly attracts me to this opportunity is excellence. I am convinced that your work environment would perfectly match my professional aspirations and allow me to flourish fully.
+I would be delighted to meet with you for an interview to discuss my motivations in more detail and discover the specific challenges of the position. Thank you for the attention you will give to my application and I remain at your disposal.
+
+Sincerely,
+Thomas Bernard
+
+
+================================================================================
+TEST 9: Test 9: Test sans genre spécifié
+================================================================================
+
+📋 DONNÉES UTILISÉES:
+Nom: Alex Taylor
+Âge: 23
+Cible: Data Analyst position
+Genre: Non spécifié
+Langue: en
+Langues sélectionnées: English, French
+Intérêts sélectionnés: technology, sports
+Objectifs sélectionnés: technical expertise
+Motivations sélectionnées: innovation
+Réalisations sélectionnées: leadership
+Expérience sélectionnée: internship
+Qualifications sélectionnées: certification
+
+📄 LETTRE GÉNÉRÉE:
+Alex Taylor
+23 years old
+June 29, 2025
+Dear Hiring Manager,
+As a passionate and motivated student, I am submitting my application for Data Analyst position.
+Although I do not yet have significant professional experience, my academic background and personal projects have allowed me to develop valuable skills.
+My main qualifications include my certification. I am particularly proud of exercising leadership responsibilities, which demonstrate my ability to carry projects to completion and achieve concrete results.
+What particularly attracts me to this opportunity is innovation. I am convinced that your work environment would perfectly match my professional aspirations and allow me to flourish fully.
+I would be delighted to meet with you for an interview to discuss my motivations in more detail and discover the specific challenges of the position. Thank you for the attention you will give to my application and I remain at your disposal.
+
+Sincerely,
+Alex Taylor
+
+
+================================================================================
+TEST 10: Test 10: Test avec une seule sélection de chaque type
+================================================================================
+
+📋 DONNÉES UTILISÉES:
+Nom: Lucas Petit
+Âge: 20
+Cible: Stage en finance
+Genre: male
+Langue: fr
+Langues sélectionnées: anglais
+Intérêts sélectionnés: sport
+Objectifs sélectionnés: collaboration
+Motivations sélectionnées: apprentissage
+Réalisations sélectionnées: communication
+Expérience sélectionnée: projet académique
+Qualifications sélectionnées: langues
+
+📄 LETTRE GÉNÉRÉE:
+Lucas Petit
+20 years old
+June 29, 2025
+Dear Hiring Manager,
+As a passionate and motivated student, I am submitting my application for Stage en finance. My proficiency in English constitutes an additional asset for this position. My interests, particularly sports, demonstrate my intellectual curiosity and adaptability.
+My experience includes an academic project, which has allowed me to develop practical skills and a deep understanding of the field.
+My main qualifications include my language skills. I am particularly proud of improving my communication skills, which demonstrate my ability to carry projects to completion and achieve concrete results. My main goal is to pursue working in teams in a stimulating environment.
+What particularly attracts me to this opportunity is continuous learning. I am convinced that your work environment would perfectly match my professional aspirations and allow me to flourish fully.
+I would be delighted to meet with you for an interview to discuss my motivations in more detail and discover the specific challenges of the position. Thank you for the attention you will give to my application and I remain at your disposal.
+
+Sincerely,
+Lucas Petit
+
+
+================================================================================
+TEST 11: Test 11: Test avec des sélections multiples (plus de 3)
+================================================================================
+
+📋 DONNÉES UTILISÉES:
+Nom: Camille Leroy
+Âge: 25
+Cible: Poste de chef de projet
+Genre: female
+Langue: fr
+Langues sélectionnées: français, anglais, espagnol, allemand, italien
+Intérêts sélectionnés: lecture, voyage, sport, musique, cinéma, cuisine
+Objectifs sélectionnés: développement professionnel, apprentissage continu, contribution sociale, innovation
+Motivations sélectionnées: défis intellectuels, travail d'équipe, innovation, apprentissage
+Réalisations sélectionnées: projet réussi, prix académique, leadership, innovation
+Expérience sélectionnée: stage, projet personnel, travail étudiant, bénévolat
+Qualifications sélectionnées: diplôme, certification, compétences techniques, soft skills
+
+📄 LETTRE GÉNÉRÉE:
+Camille Leroy
+25 years old
+June 29, 2025
+Dear Hiring Manager,
+As a passionate and motivated student, I am submitting my application for Poste de chef de projet. My proficiency in French, English, Spanish, German, and Italian constitutes an additional asset for this position. My interests, particularly reading, traveling, sports, music, cinema, and cooking, demonstrate my intellectual curiosity and adaptability.
+My experience includes an internship, a personal project, student work, and volunteer work, which has allowed me to develop practical skills and a deep understanding of the field.
+My main qualifications include my degree, my certification, my technical skills, and my soft skills. I am particularly proud of successfully completing a complex project, receiving an academic award, exercising leadership responsibilities, and innovation in my field, which demonstrate my ability to carry projects to completion and achieve concrete results. My main goal is to pursue my professional development, continuous learning, contributing to society, and innovation in a stimulating environment.
+What particularly attracts me to this opportunity is intellectual challenges, teamwork, innovation, and continuous learning. I am convinced that your work environment would perfectly match my professional aspirations and allow me to flourish fully.
+I would be delighted to meet with you for an interview to discuss my motivations in more detail and discover the specific challenges of the position. Thank you for the attention you will give to my application and I remain at your disposal.
+
+Sincerely,
+Camille Leroy
+
+
+================================================================================
+TEST 12: Test 12: Test avec des champs vides et des espaces
+================================================================================
+
+📋 DONNÉES UTILISÉES:
+Nom:    Jean   Durand   
+Âge:   23  
+Cible:   Poste de développeur  
+Genre: male
+Langue: fr
+Langues sélectionnées:   français  ,  anglais  
+Intérêts sélectionnés:   lecture  ,  sport  
+Objectifs sélectionnés:   
+Motivations sélectionnées:   défis intellectuels  
+Réalisations sélectionnées:   
+Expérience sélectionnée:   stage  
+Qualifications sélectionnées:   diplôme  
+
+📄 LETTRE GÉNÉRÉE:
+   Jean   Durand   
+  23   years old
+June 29, 2025
+Dear Hiring Manager,
+As a passionate and motivated student, I am submitting my application for   Poste de développeur  .
+Although I do not yet have significant professional experience, my academic background and personal projects have allowed me to develop valuable skills.
+My skills and motivation constitute my main assets for this position.
+What particularly attracts me to this opportunity is . I am convinced that your work environment would perfectly match my professional aspirations and allow me to flourish fully.
+I would be delighted to meet with you for an interview to discuss my motivations in more detail and discover the specific challenges of the position. Thank you for the attention you will give to my application and I remain at your disposal.
+
+Sincerely,
+   Jean   Durand   
+
+
+================================================================================
+TEST 13: Test 13: Test avec des caractères spéciaux
+================================================================================
+
+📋 DONNÉES UTILISÉES:
+Nom: José García
+Âge: 24
+Cible: Poste d'ingénieur en IA
+Genre: male
+Langue: fr
+Langues sélectionnées: français, anglais, espagnol
+Intérêts sélectionnés: technologie, art, nature
+Objectifs sélectionnés: innovation, impact positif
+Motivations sélectionnées: défis intellectuels, excellence
+Réalisations sélectionnées: projet réussi, résolution de problèmes
+Expérience sélectionnée: projet personnel, formation
+Qualifications sélectionnées: compétences techniques, passion
+
+📄 LETTRE GÉNÉRÉE:
+José García
+24 years old
+June 29, 2025
+Dear Hiring Manager,
+As a passionate and motivated student, I am submitting my application for Poste d'ingénieur en IA. My proficiency in French, English, and Spanish constitutes an additional asset for this position. My interests, particularly technology, art, and nature, demonstrate my intellectual curiosity and adaptability.
+My experience includes a personal project and training, which has allowed me to develop practical skills and a deep understanding of the field.
+My main qualifications include my technical skills and my passion. I am particularly proud of successfully completing a complex project and solving complex problems, which demonstrate my ability to carry projects to completion and achieve concrete results. My main goal is to pursue innovation and having a positive impact in a stimulating environment.
+What particularly attracts me to this opportunity is intellectual challenges and excellence. I am convinced that your work environment would perfectly match my professional aspirations and allow me to flourish fully.
+I would be delighted to meet with you for an interview to discuss my motivations in more detail and discover the specific challenges of the position. Thank you for the attention you will give to my application and I remain at your disposal.
+
+Sincerely,
+José García
+
+
+================================================================================
+TEST 14: Test 14: Test de détection automatique de langue (français)
+================================================================================
+
+📋 DONNÉES UTILISÉES:
+Nom: Marie-Claire Dubois
+Âge: 22
+Cible: Stage à Paris
+Genre: female
+Langue: fr
+Langues sélectionnées: français, anglais
+Intérêts sélectionnés: lecture, cuisine
+Objectifs sélectionnés: développement professionnel
+Motivations sélectionnées: travail d'équipe
+Réalisations sélectionnées: projet réussi
+Expérience sélectionnée: stage
+Qualifications sélectionnées: diplôme
+
+📄 LETTRE GÉNÉRÉE:
+Marie-Claire Dubois
+22 ans
+29 juin 2025
+Madame, Monsieur,
+Étudiante passionnée et motivée, je soumets ma candidature pour Stage à Paris. Ma maîtrise de français et anglais constitue un atout supplémentaire pour ce poste. Mes centres d'intérêt, notamment la lecture et la cuisine, témoignent de ma curiosité intellectuelle et de ma capacité d'adaptation.
+Mon expérience inclut un stage, ce qui m'a permis de développer des compétences pratiques et une compréhension approfondie du domaine.
+Mes principales qualifications incluent mon diplôme. Je suis particulièrement fiere de la réussite d'un projet complexe, qui démontrent ma capacité à mener des projets à terme et à obtenir des résultats concrets. Mon objectif principal est de poursuivre mon développement professionnel dans un environnement stimulant.
+Ce qui m'attire particulièrement dans cette opportunité, c'est le travail d'équipe. Je suis convaincue que votre environnement de travail correspondrait parfaitement à mes aspirations professionnelles et me permettrait de m'épanouir pleinement.
+Je serais ravie de pouvoir vous rencontrer lors d'un entretien afin de vous exposer plus en détail mes motivations et de découvrir les enjeux spécifiques du poste. Je vous remercie de l'attention que vous porterez à ma candidature et vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.
+
+Cordialement,
+Marie-Claire Dubois
+
+
+================================================================================
+TEST 15: Test 15: Test de détection automatique de langue (anglais)
+================================================================================
+
+📋 DONNÉES UTILISÉES:
+Nom: Michael Brown
+Âge: 25
+Cible: Position in New York
+Genre: male
+Langue: en
+Langues sélectionnées: English, French
+Intérêts sélectionnés: reading, sports
+Objectifs sélectionnés: professional development
+Motivations sélectionnées: teamwork
+Réalisations sélectionnées: successful project
+Expérience sélectionnée: internship
+Qualifications sélectionnées: degree
+
+📄 LETTRE GÉNÉRÉE:
+Michael Brown
+25 years old
+June 29, 2025
+Dear Hiring Manager,
+As a passionate and motivated student, I am submitting my application for Position in New York.
+Although I do not yet have significant professional experience, my academic background and personal projects have allowed me to develop valuable skills.
+My skills and motivation constitute my main assets for this position.
+What particularly attracts me to this opportunity is . I am convinced that your work environment would perfectly match my professional aspirations and allow me to flourish fully.
+I would be delighted to meet with you for an interview to discuss my motivations in more detail and discover the specific challenges of the position. Thank you for the attention you will give to my application and I remain at your disposal.
+
+Sincerely,
+Michael Brown
+
+
+================================================================================
+RÉSUMÉ: 15 lettres générées
+Date: 29/06/2025 1:23:36 PM
+================================================================================
