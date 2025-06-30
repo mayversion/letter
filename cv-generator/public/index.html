@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Resume Generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/babel-standalone@7.22.10/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-black text-white min-h-screen">
+    <div id="root"></div>
+    <script type="text/babel">
+      const { useState, useEffect } = React;
+
+      const ResumeGenerator = () => {
+        const [activeTab, setActiveTab] = useState('personal');
+        const [resumeData, setResumeData] = useState({
+          personal: { name: '', email: '', phone: '', address: '', linkedin: '', website: '' },
+          summary: '',
+          experiences: [{ title: '', company: '', dates: '', description: '' }],
+          education: [{ degree: '', institution: '', dates: '', specialization: '' }],
+          skills: [''],
+          languages: [{ language: '', level: '' }],
+          certifications: [{ title: '', date: '' }],
+          projects: [{ name: '', technologies: '', description: '' }],
+          interests: [''],
+        });
+        const [preview, setPreview] = useState('');
+        const [savedResumes, setSavedResumes] = useState([]);
+        const [tip, setTip] = useState('Keep your CV concise, ideally 1-2 pages.');
+
+        // Tips array for random display
+        const tips = [
+          'Keep your CV concise, ideally 1-2 pages.',
+          'Tailor your CV to each job application.',
+          'Use action verbs to describe your experiences.',
+          'Highlight measurable achievements in your experience.',
+        ];
+
+        // Update preview whenever resumeData changes
+        useEffect(() => {
+          const generatePreview = () => {
+            let output = '';
+            if (resumeData.personal.name) {
+              output += `📋 PERSONAL INFORMATION\n`;
+              output += `Name: ${resumeData.personal.name}\n`;
+              if (resumeData.personal.email) output += `Email: ${resumeData.personal.email}\n`;
+              if (resumeData.personal.phone) output += `Phone: ${resumeData.personal.phone}\n`;
+              if (resumeData.personal.address) output += `Address: ${resumeData.personal.address}\n`;
+              if (resumeData.personal.linkedin) output += `LinkedIn: ${resumeData.personal.linkedin}\n`;
+              if (resumeData.personal.website) output += `Website: ${resumeData.personal.website}\n`;
+              output += '\n';
+            }
+            if (resumeData.summary) {
+              output += `📝 PROFESSIONAL SUMMARY\n${resumeData.summary}\n\n`;
+            }
+            if (resumeData.experiences[0].title) {
+              output += `💼 PROFESSIONAL EXPERIENCE\n`;
+              resumeData.experiences.forEach(exp => {
+                if (exp.title) {
+                  output += `${exp.title} at ${exp.company} (${exp.dates})\n${exp.description}\n\n`;
+                }
+              });
+            }
+            if (resumeData.education[0].degree) {
+              output += `🎓 EDUCATION\n`;
+              resumeData.education.forEach(edu => {
+                if (edu.degree) {
+                  output += `${edu.degree}, ${edu.institution} (${edu.dates})\n${edu.specialization}\n\n`;
+                }
+              });
+            }
+            if (resumeData.skills[0]) {
+              output += `💻 SKILLS\n${resumeData.skills.filter(s => s).join(', ')}\n\n`;
+            }
+            if (resumeData.languages[0].language) {
+              output += `🌍 LANGUAGES\n`;
+              resumeData.languages.forEach(lang => {
+                if (lang.language) {
+                  output += `${lang.language}: ${lang.level}\n`;
+                }
+              });
+              output += '\n';
+            }
+            if (resumeData.certifications[0].title) {
+              output += `🏆 CERTIFICATIONS\n`;
+              resumeData.certifications.forEach(cert => {
+                if (cert.title) {
+                  output += `${cert.title} (${cert.date})\n`;
+                }
+              });
+              output += '\n';
+            }
+            if (resumeData.projects[0].name) {
+              output += `🚀 PROJECTS\n`;
+              resumeData.projects.forEach(proj => {
+                if (proj.name) {
+                  output += `${proj.name} (${proj.technologies})\n${proj.description}\n\n`;
+                }
+              });
+            }
+            if (resumeData.interests[0]) {
+              output += `🎯 INTERESTS\n${resumeData.interests.filter(i => i).join(', ')}\n`;
+            }
+            setPreview(output);
+          };
+          generatePreview();
+          // Update tip every 10 seconds
+          const tipInterval = setInterval(() => {
+            setTip(tips[Math.floor(Math.random() * tips.length)]);
+          }, 10000);
+          return () => clearInterval(tipInterval);
+        }, [resumeData]);
+
+        // Load saved resumes from localStorage
+        useEffect(() => {
+          const saved = JSON.parse(localStorage.getItem('savedResumes') || '[]');
+          setSavedResumes(saved);
+        }, []);
+
+        // Handle input changes
+        const handleInputChange = (section, field, index, value) => {
+          if (section === 'personal' || section === 'summary') {
+            setResumeData({
+              ...resumeData,
+              [section]: section === 'summary' ? value : { ...resumeData[section], [field]: value },
+            });
+          } else if (section === 'skills' || section === 'interests') {
+            const updated = [...resumeData[section]];
+            updated[index] = value;
+            setResumeData({ ...resumeData, [section]: updated });
+          } else {
+            const updated = [...resumeData[section]];
+            updated[index] = { ...updated[index], [field]: value };
+            setResumeData({ ...resumeData, [section]: updated });
+          }
+        };
+
+        // Add new entry to array-based sections
+        const addEntry = (section) => {
+          if (section === 'skills' || section === 'interests') {
+            setResumeData({ ...resumeData, [section]: [...resumeData[section], ''] });
+          } else if (section === 'experiences') {
+            setResumeData({
+              ...resumeData,
+              [section]: [...resumeData[section], { title: '', company: '', dates: '', description: '' }],
+            });
+          } else if (section === 'education') {
+            setResumeData({
+              ...resumeData,
+              [section]: [...resumeData[section], { degree: '', institution: '', dates: '', specialization: '' }],
+            });
+          } else if (section === 'languages') {
+            setResumeData({
+              ...resumeData,
+              [section]: [...resumeData[section], { language: '', level: '' }],
+            });
+          } else if (section === 'certifications') {
+            setResumeData({
+              ...resumeData,
+              [section]: [...resumeData[section], { title: '', date: '' }],
+            });
+          } else if (section === 'projects') {
+            setResumeData({
+              ...resumeData,
+              [section]: [...resumeData[section], { name: '', technologies: '', description: '' }],
+            });
+          }
+        };
+
+        // Remove entry from array-based sections
+        const removeEntry = (section, index) => {
+          const updated = [...resumeData[section]];
+          updated.splice(index, 1);
+          setResumeData({ ...resumeData, [section]: updated });
+        };
+
+        // Save resume to localStorage
+        const saveResume = () => {
+          const timestamp = new Date().toISOString();
+          const newResume = { id: timestamp, data: resumeData };
+          const updatedResumes = [...savedResumes, newResume];
+          setSavedResumes(updatedResumes);
+          localStorage.setItem('savedResumes', JSON.stringify(updatedResumes));
+          alert('Resume saved!');
+        };
+
+        // Load a saved resume
+        const loadResume = (id) => {
+          const resume = savedResumes.find(r => r.id === id);
+          if (resume) {
+            setResumeData(resume.data);
+          }
+        };
+
+        // Export resume as .txt
+        const exportResume = () => {
+          const blob = new Blob([preview], { type: 'text/plain' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'resume.txt';
+          a.click();
+          URL.revokeObjectURL(url);
+        };
+
+        // Tab content rendering
+        const renderTabContent = () => {
+          switch (activeTab) {
+            case 'personal':
+              return (
+                <div className="space-y-4">
+                  {Object.keys(resumeData.personal).map(field => (
+                    <input
+                      key={field}
+                      type="text"
+                      placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
+                      value={resumeData.personal[field]}
+                      onChange={(e) => handleInputChange('personal', field, null, e.target.value)}
+                      className="w-full p-2 bg-gray-800 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-gray-400"
+                    />
+                  ))}
+                </div>
+              );
+            case 'summary':
+              return (
+                <textarea
+                  placeholder="Professional Summary"
+                  value={resumeData.summary}
+                  onChange={(e) => handleInputChange('summary', null, null, e.target.value)}
+                  className="w-full p-2 bg-gray-800 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-gray-400 h-32"
+                />
+              );
+            case 'experiences':
+              return (
+                <div className="space-y-4">
+                  {resumeData.experiences.map((exp, index) => (
+                    <div key={index} className="bg-gray-800 p-4 rounded">
+                      <input
+                        type="text"
+                        placeholder="Job Title"
+                        value={exp.title}
+                        onChange={(e) => handleInputChange('experiences', 'title', index, e.target.value)}
+                        className="w-full p-2 mb-2 bg-gray-700 text-white border border-gray-600 rounded"
+                      />
+                      <input
+                        type="text"
+                        placeholder="Company"
+                        value={exp.company}
+                        onChange={(e) => handleInputChange('experiences', 'company', index, e.target.value)}
+                        className="w-full p-2 mb-2 bg-gray-700 text-white border border-gray-600 rounded"
+                      />
+                      <input
+                        type="text"
+                        placeholder="Dates"
+                        value={exp.dates}
+                        onChange={(e) => handleInputChange('experiences', 'dates', index, e.target.value)}
+                        className="w-full p-2 mb-2 bg-gray-700 text-white border border-gray-600 rounded"
+                      />
+                      <textarea
+                        placeholder="Description"
+                        value={exp.description}
+                        onChange={(e) => handleInputChange('experiences', 'description', index, e.target.value)}
+                        className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded h-24"
+                      />
+                      {resumeData.experiences.length > 1 && (
+                        <button
+                          onClick={() => removeEntry('experiences', index)}
+                          className="mt-2 text-red-400 hover:text-red-600"
+                        >
+                          Remove
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                  <button
+                    onClick={() => addEntry('experiences')}
+                    className="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded"
+                  >
+                    Add Experience
+                  </button>
+                </div>
+              );
+            case 'education':
+              return (
+                <div className="space-y-4">
+                  {resumeData.education.map((edu, index) => (
+                    <div key={index} className="bg-gray-800 p-4 rounded">
+                      <input
+                        type="text"
+                        placeholder="Degree"
+                        value={edu.degree}
+                        onChange={(e) => handleInputChange('education', 'degree', index, e.target.value)}
+                        className="w-full p-2 mb-2 bg-gray-700 text-white border border-gray-600 rounded"
+                      />
+                      <input
+                        type="text"
+                        placeholder="Institution"
+                        value={edu.institution}
+                        onChange={(e) => handleInputChange('education', 'institution', index, e.target.value)}
+                        className="w-full p-2 mb-2 bg-gray-700 text-white border border-gray-600 rounded"
+                      />
+                      <input
+                        type="text"
+                        placeholder="Dates"
+                        value={edu.dates}
+                        onChange={(e) => handleInputChange('education', 'dates', index, e.target.value)}
+                        className="w-full p-2 mb-2 bg-gray-700 text-white border border-gray-600 rounded"
+                      />
+                      <input
+                        type="text"
+                        placeholder="Specialization"
+                        value={edu.specialization}
+                        onChange={(e) => handleInputChange('education', 'specialization', index, e.target.value)}
+                        className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+                      />
+                      {resumeData.education.length > 1 && (
+                        <button
+                          onClick={() => removeEntry('education', index)}
+                          className="mt-2 text-red-400 hover:text-red-600"
+                        >
+                          Remove
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                  <button
+                    onClick={() => addEntry('education')}
+                    className="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded"
+                  >
+                    Add Education
+                  </button>
+                </div>
+              );
+            case 'skills':
+              return (
+                <div className="space-y-4">
+                  {resumeData.skills.map((skill, index) => (
+                    <div key={index} className="flex items-center">
+                      <input
+                        type="text"
+                        placeholder="Skill"
+                        value={skill}
+                        onChange={(e) => handleInputChange('skills', null, index, e.target.value)}
+                        className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+                      />
+                      {resumeData.skills.length > 1 && (
+                        <button
+                          onClick={() => removeEntry('skills', index)}
+                          className="ml-2 text-red-400 hover:text-red-600"
+                        >
+                          Remove
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                  <button
+                    onClick={() => addEntry('skills')}
+                    className="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded"
+                  >
+                    Add Skill
+                  </button>
+                </div>
+              );
+            case 'languages':
+              return (
+                <div className="space-y-4">
+                  {resumeData.languages.map((lang, index) => (
+                    <div key={index} className="flex items-center space-x-2">
+                      <input
+                        type="text"
+                        placeholder="Language"
+                        value={lang.language}
+                        onChange={(e) => handleInputChange('languages', 'language', index, e.target.value)}
+                        className="w-1/2 p-2 bg-gray-700 text-white border border-gray-600 rounded"
+                      />
+                      <input
+                        type="text"
+                        placeholder="Level"
+                        value={lang.level}
+                        onChange={(e) => handleInputChange('languages', 'level', index, e.target.value)}
+                        className="w-1/2 p-2 bg-gray-700 text-white border border-gray-600 rounded"
+                      />
+                      {resumeData.languages.length > 1 && (
+                        <button
+                          onClick={() => removeEntry('languages', index)}
+                          className="text-red-400 hover:text-red-600"
+                        >
+                          Remove
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                  <button
+                    onClick={() => addEntry('languages')}
+                    className="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded"
+                  >
+                    Add Language
+                  </button>
+                </div>
+              );
+            case 'certifications':
+              return (
+                <div className="space-y-4">
+                  {resumeData.certifications.map((cert, index) => (
+                    <div key={index} className="flex items-center space-x-2">
+                      <input
+                        type="text"
+                        placeholder="Certification"
+                        value={cert.title}
+                        onChange={(e) => handleInputChange('certifications', 'title', index, e.target.value)}
+                        className="w-1/2 p-2 bg-gray-700 text-white border border-gray-600 rounded"
+                      />
+                      <input
+                        type="text"
+                        placeholder="Date"
+                        value={cert.date}
+                        onChange={(e) => handleInputChange('certifications', 'date', index, e.target.value)}
+                        className="w-1/2 p-2 bg-gray-700 text-white border border-gray-600 rounded"
+                      />
+                      {resumeData.certifications.length > 1 && (
+                        <button
+                          onClick={() => removeEntry('certifications', index)}
+                          className="text-red-400 hover:text-red-600"
+                        >
+                          Remove
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                  <button
+                    onClick={() => addEntry('certifications')}
+                    className="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded"
+                  >
+                    Add Certification
+                  </button>
+                </div>
+              );
+            case 'projects':
+              return (
+                <div className="space-y-4">
+                  {resumeData.projects.map((proj, index) => (
+                    <div key={index} className="bg-gray-800 p-4 rounded">
+                      <input
+                        type="text"
+                        placeholder="Project Name"
+                        value={proj.name}
+                        onChange={(e) => handleInputChange('projects', 'name', index, e.target.value)}
+                        className="w-full p-2 mb-2 bg-gray-700 text-white border border-gray-600 rounded"
+                      />
+                      <input
+                        type="text"
+                        placeholder="Technologies"
+                        value={proj.technologies}
+                        onChange={(e) => handleInputChange('projects', 'technologies', index, e.target.value)}
+                        className="w-full p-2 mb-2 bg-gray-700 text-white border border-gray-600 rounded"
+                      />
+                      <textarea
+                        placeholder="Description"
+                        value={proj.description}
+                        onChange={(e) => handleInputChange('projects', 'description', index, e.target.value)}
+                        className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded h-24"
+                      />
+                      {resumeData.projects.length > 1 && (
+                        <button
+                          onClick={() => removeEntry('projects', index)}
+                          className="mt-2 text-red-400 hover:text-red-600"
+                        >
+                          Remove
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                  <button
+                    onClick={() => addEntry('projects')}
+                    className="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded"
+                  >
+                    Add Project
+                  </button>
+                </div>
+              );
+            case 'interests':
+              return (
+                <div className="space-y-4">
+                  {resumeData.interests.map((interest, index) => (
+                    <div key={index} className="flex items-center">
+                      <input
+                        type="text"
+                        placeholder="Interest"
+                        value={interest}
+                        onChange={(e) => handleInputChange('interests', null, index, e.target.value)}
+                        className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+                      />
+                      {resumeData.interests.length > 1 && (
+                        <button
+                          onClick={() => removeEntry('interests', index)}
+                          className="ml-2 text-red-400 hover:text-red-600"
+                        >
+                          Remove
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                  <button
+                    onClick={() => addEntry('interests')}
+                    className="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded"
+                  >
+                    Add Interest
+                  </button>
+                </div>
+              );
+            default:
+              return null;
+          }
+        };
+
+        return (
+          <div className="container mx-auto p-4">
+            <h1 className="text-3xl font-bold mb-4 text-center">Smart Resume Generator</h1>
+            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+              {/* Tabs */}
+              <div className="md:w-1/4 bg-gray-900 p-4 rounded">
+                {['personal', 'summary', 'experiences', 'education', 'skills', 'languages', 'certifications', 'projects', 'interests'].map(tab => (
+                  <button
+                    key={tab}
+                    onClick={() => setActiveTab(tab)}
+                    className={`block w-full text-left p-2 mb-2 rounded ${activeTab === tab ? 'bg-gray-600' : 'bg-gray-800'} hover:bg-gray-500`}
+                  >
+                    {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                  </button>
+                ))}
+              </div>
+              {/* Input Area */}
+              <div className="md:w-2/4 bg-gray-800 p-4 rounded">
+                <h2 className="text-xl font-semibold mb-4">{activeTab.toUpperCase()}</h2>
+                {renderTabContent()}
+                <div className="mt-4 flex space-x-2">
+                  <button
+                    onClick={saveResume}
+                    className="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded"
+                  >
+                    Save Resume
+                  </button>
+                  <button
+                    onClick={exportResume}
+                    className="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded"
+                  >
+                    Export as TXT
+                  </button>
+                </div>
+                <div className="mt-4">
+                  <h3 className="text-lg font-semibold">Saved Resumes</h3>
+                  {savedResumes.length > 0 ? (
+                    <select
+                      onChange={(e) => loadResume(e.target.value)}
+                      className="w-full p-2 bg-gray-700 text-white border border-gray-600 rounded"
+                    >
+                      <option value="">Select a saved resume</option>
+                      {savedResumes.map(resume => (
+                        <option key={resume.id} value={resume.id}>
+                          {resume.id}
+                        </option>
+                      ))}
+                    </select>
+                  ) : (
+                    <p>No saved resumes yet.</p>
+                  )}
+                </div>
+              </div>
+              {/* Preview Area */}
+              <div className="md:w-1/4 bg-gray-900 p-4 rounded">
+                <h2 className="text-xl font-semibold mb-4">Preview</h2>
+                <pre className="whitespace-pre-wrap bg-gray-800 p-4 rounded">{preview || 'Start filling in details to see the preview.'}</pre>
+                <p className="mt-4 text-sm text-gray-400">Tip: {tip}</p>
+              </div>
+            </div>
+          </div>
+        );
+      };
+
+      ReactDOM.render(<ResumeGenerator />, document.getElementById('root'));
+    </script>
+  </body>
+</html>

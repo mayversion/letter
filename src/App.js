@@ -706,6 +706,7 @@ const App = () => {
 
     // Algerian Universities Data
     const algerianUniversities = [
+        { name: "Université des Sciences et de la Technologie Houari Boumediene (USTHB)", city: "Alger" },
         { name: 'Université d\'Alger 1 - Benyoucef Benkhedda', city: 'Alger' },
         { name: 'Université d\'Alger 2 - Abou El Kacem Saâdallah', city: 'Alger' },
         { name: 'Université d\'Alger 3 - Brahim Soltane Chaibout', city: 'Alger' },
